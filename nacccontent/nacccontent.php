@@ -5,7 +5,7 @@
  * @version		1.1
  * @license		GPL v.3 Or Greater
  
- * \file nacc/nacccontent.php
+ * \file nacccontent.php
  * \brief This is an inline content plugin for the NACC.
  * \version 1.1
  * \license GPL V.3 Or Greater
@@ -61,6 +61,15 @@ class plgContentNACCcontent extends JPlugin
 	 * Method is called by the view
 	 *
 	 */
+    public function onContentPrepare(   $context,
+                                        &$article,
+                                        &$params,
+                                        $page = 0
+                                        )
+    {
+        $this->onPrepareContent ( $article, $params, $page );
+    }
+    
 	function onPrepareContent(	&$article,	///< The article object.  Note $article->text is also available
 								&$params,	///< The article params
 								$limitstart	///< The 'page' number
@@ -69,6 +78,7 @@ class plgContentNACCcontent extends JPlugin
         if ( preg_match ( '|\[\[\s?NACC\s?\]\]|', $article->text ) || preg_match ( '|\<!\-\-\s?NACC\s?\-\-\>|', $article->text ) )
             {
             $currenturl = JURI::root().'plugins/content';
+            $currenturl .= preg_match ( '|nacccontent$|', dirname ( __FILE__ ) ) ? '/nacccontent' : '';
             $document =& JFactory::getDocument();
             $document->addScript ( $currenturl.'/nacc/nacc.js' );
             $document->addStylesheet ( $currenturl.'/nacc/nacc.css', 'text/css' );
@@ -77,9 +87,10 @@ class plgContentNACCcontent extends JPlugin
             $cc_text .= '<h1 style="text-align:center">JavaScript Required</h1>';
             $cc_text .= '<h2 style="text-align:center">Sadly, you must enable JavaScript on your browser in order to use this cleantime calculator.</h2>';
             $cc_text .= '</noscript>';
-            $cc_text .= '<script type="text/javascript">NACC_CleanTime("nacc_container", \''.JURI::root().'plugins/content/nacc\', true, true, false);</script>'."\n";
+            $cc_text .= '<script type="text/javascript">NACC_CleanTime("nacc_container",'."'$currenturl/nacc', true, true, false);</script>\n";
             $article->text = preg_replace('|\[\[\s?NACC\s?\]\]|', $cc_text, $article->text, 1 );
             $article->text = preg_replace('|\<!\-\-\s?NACC\s?\-\-\>|', $cc_text, $article->text, 1 );
+// die ( '<pre>'.htmlspecialchars(print_r($article->text,true)).'</pre>');
             }
 	}
 }
