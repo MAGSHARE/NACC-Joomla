@@ -2,12 +2,26 @@
 /**
  * @package		Joomla
  * @subpackage	Content
- * @version		1.0.1
- * @license		TMYGS (Take Me, You Gypsy Stallion -Completely free and open)
+ * @version		1.1
+ * @license		GPL v.3 Or Greater
+ 
  * \file nacc/nacccontent.php
  * \brief This is an inline content plugin for the NACC.
- * \license This code is completely open and free. You may access it by <a href="http://magshare.org/bmlt-the-basic-meeting-list-toolbox/">visiting the BMLT Project Site</a>. No one is allowed to resell this code. It should never be sold.
- * \version 1.0.0
+ * \version 1.1
+ * \license GPL V.3 Or Greater
+ 
+    NACC is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    NACC is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this code.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 // Check to ensure this file is included in Joomla!
@@ -22,7 +36,7 @@ jimport( 'joomla.plugin.plugin' );
  * @subpackage	Content
  * @since 		1.5
  */
-class plgcontentNACCcontent extends JPlugin
+class plgContentNACCcontent extends JPlugin
 {
 	/**
 	 * \brief Constructor
@@ -33,7 +47,7 @@ class plgcontentNACCcontent extends JPlugin
 	 *
 	 * @since 1.5
 	 */
-	function plgcontentNACCcontent( &$subject,	///< The object to observe
+	function plgContentNACCcontent( &$subject,	///< The object to observe
 									$params			///< The object that holds the plugin parameters
 									)
 	{

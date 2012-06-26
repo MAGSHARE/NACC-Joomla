@@ -1,0 +1,20 @@
+DESCRIPTION
+-----------
+	This is a Joomla Content Plugin for the NACC.
+	
+LICENSE
+-------
+	This code is GPLV3.
+
+INSTALLATION
+------------
+    Install the zip file, in standard fashion.
+    	
+USAGE
+-----
+    [[NACC]] or <!-- NACC -->
+    	
+CHANGELIST
+----------
+* Version 1.1.0
+    *   Initial GitHub version -adds support for Joomla 2.5

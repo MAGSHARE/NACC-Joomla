@@ -3,7 +3,9 @@
 	<name>Content - NACC</name>
 	<author>MagShare</author>
 	<authorUrl>www.magshare.org</authorUrl>
-	<version>1.0.1</version>
+	<version>1.1</version>
+	<creationDate>2012-06-26</creationDate>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<description>A Joomla Content Plugin for the NACC</description>
 	<files>
 		<filename plugin="nacccontent">nacccontent.php</filename>
