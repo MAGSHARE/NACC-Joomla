@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+	<name>Content - NACC</name>
+	<author>MagShare</author>
+	<authorUrl>www.magshare.org</authorUrl>
+	<version>1.0.1</version>
+	<description>A Joomla Content Plugin for the NACC</description>
+	<files>
+		<filename plugin="nacccontent">nacccontent.php</filename>
+		<folder>nacc</folder>
+	</files>
+	<params/>
+</install>
